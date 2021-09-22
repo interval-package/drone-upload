@@ -1,0 +1,43 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/detail/detail",
+    "pages/showMap/showMap",
+    "pages/showThroneInfo/showThroneInfo",
+    "pages/myInfo/myInfo"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarTitleText": "the saver",
+    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#d1ba96"
+  },
+  "tabBar": {
+    "color": "#ffffff",
+    "selectedColor": "#ff4c91",
+    "borderStyle": "white",
+    "backgroundColor": "#d1ba96",
+    "list": [
+      {
+        "pagePath": "pages/showMap/showMap",
+        "iconPath": "images/git.png",
+        "selectedIconPath": "images/logo.png",
+        "text": "显示地图"
+      },
+      {
+        "pagePath": "pages/detail/detail",
+        "iconPath": "images/git.png",
+        "selectedIconPath": "images/logo.png",
+        "text": "详细信息"
+      },
+      {
+        "pagePath": "pages/myInfo/myInfo",
+        "iconPath": "images/icon.png",
+        "selectedIconPath": "images/logo.png",
+        "text": "我的信息"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
