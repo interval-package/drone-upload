@@ -1,1 +1,64 @@
 /* pages/showMap/showMap.wxss */
+page{
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+.mainMap{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.mainMap map{
+  width: 100%;
+  height: 100%;
+}
+
+.u_tab {
+  display: flex;
+}
+.tab_item {
+  flex: 1;
+  font-size: 10pt;
+  text-align: center;
+  line-height: 72rpx;
+  border-bottom: 6rpx solid #252525;
+}
+
+.tab_item.active{
+  color: #e07014;
+  border-bottom-color: #e07014;
+}
+
+.u_content {
+  flex: 1;
+  height: 450px;
+}
+
+.u_content_bottom {
+  height: 100%;
+}
+
+/* 子页面元素 */
+
+.content_info_slide {
+  height: 400rpx;
+  margin-bottom: 20px;
+}
+.content_info_slide image {
+  width: 100%;
+  height: 100%;
+
+}
+
+.map_container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 75%;
+}

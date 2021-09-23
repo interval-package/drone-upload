@@ -1,1 +1,54 @@
 /* pages/myInfo/myInfo.wxss */
+/* index.wxss */
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+  margin-bottom: 30rpx;
+  box-sizing: border-box;
+} 
+
+/* 用叶子来表示一个container */
+.leaves {
+  padding: 0;
+  width: 100%;
+}
+.leaves button {
+  border: black 2rpx solid;
+  padding: 10rpx;
+  margin-bottom: 10rpx;
+  width: 75%;
+}
+
+/* 就是那个列表 */
+.le_item {
+  text-align: left;
+  padding: 10rpx;
+  border-bottom: solid 2rpx black;
+  background-color: #e6d3b6;
+}
+.le_item.first {
+  border-top: solid 2rpx black;
+  margin-top: 20rpx;
+}
+.le_item.last {
+  margin-bottom: 50rpx;
+}
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: rgb(13, 70, 136);
+}
+.userinfo-avatar {
+  overflow: hidden;
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}

@@ -1,0 +1,9 @@
+<!-- mainMap -->
+<view class="map_container">
+  <view class="mainMap">
+    <map latitude="{{latitude}}" longitude="{{longitude}}"></map>
+  </view>
+  <view>
+    <button bindtap="showCurrent" style="margin: 10px;">显示当前</button>
+  </view>
+</view>

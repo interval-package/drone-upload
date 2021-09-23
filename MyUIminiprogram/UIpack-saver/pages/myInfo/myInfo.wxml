@@ -1,2 +1,29 @@
 <!--pages/myInfo/myInfo.wxml-->
-<text>pages/myInfo/myInfo.wxml</text>
+<view class="container">
+  <view class="userinfo">
+      <block wx:if="{{canIUseOpenData}}">
+        <view class="userinfo-avatar">
+          <open-data type="userAvatarUrl"></open-data>
+        </view>
+        <open-data type="userNickName"></open-data>
+      </block>
+      <block wx:elif="{{!hasUserInfo}}">
+        <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
+        <button wx:elif="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+        <view wx:else> 请使用1.4.4及以上版本基础库 </view>
+      </block>
+      <block wx:else>
+        <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      </block>
+  </view>
+  <view class="leaves">
+    <view class="le_item {{'first'}}" bindtap="myInfo">1.我的信息</view>
+    <view class="le_item" bindtap="my_map">2.我的地图</view>
+    <view class="le_item" bindtap="my_map">3.历史记录</view>
+    <view class="le_item {{'last'}}" bindtap="myInfo">4.更多信息</view>
+    <button>生成报告</button>
+    <button>人工服务</button>
+    <button>寻求帮助</button>
+  </view>
+</view>

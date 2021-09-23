@@ -5,7 +5,22 @@ Page({
    * 页面的初始数据
    */
   data: {
+    latitude: 28.219611,
+    longitude: 112.919452,
+    item: 0,
+    tab: 0
+  },
 
+  changeItem(e) {
+    this.setData({
+      item: e.target.dataset.item
+    })
+  },
+
+  changeTab(e) {
+    this.setData({
+      tab: e.detail.current
+    })
   },
 
   /**
@@ -14,53 +29,4 @@ Page({
   onLoad: function (options) {
 
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })
