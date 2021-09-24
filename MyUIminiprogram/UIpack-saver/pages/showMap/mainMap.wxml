@@ -1,7 +1,14 @@
 <!-- mainMap -->
 <view class="map_container">
   <view class="mainMap">
-    <map latitude="{{latitude}}" longitude="{{longitude}}"></map>
+    <map 
+    latitude="{{latitude}}"
+    longitude="{{longitude}}"
+    markers="{{thrones}}"
+    bindregionchange="mapUpload"
+    show-location
+    show-scale
+    ></map>
   </view>
   <view>
     <button bindtap="showCurrent" style="margin: 10px;">显示当前</button>

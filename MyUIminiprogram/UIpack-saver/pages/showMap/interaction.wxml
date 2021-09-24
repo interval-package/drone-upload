@@ -1,0 +1,5 @@
+<view class="container">
+  <view class="button_container">
+    <button>no</button>
+  </view>
+</view>

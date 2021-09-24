@@ -22,7 +22,7 @@
     <view class="le_item" bindtap="my_map">2.我的地图</view>
     <view class="le_item" bindtap="my_map">3.历史记录</view>
     <view class="le_item {{'last'}}" bindtap="myInfo">4.更多信息</view>
-    <button>生成报告</button>
+    <button>火情报告</button>
     <button>人工服务</button>
     <button>寻求帮助</button>
   </view>

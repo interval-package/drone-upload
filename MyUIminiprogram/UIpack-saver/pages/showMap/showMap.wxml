@@ -11,13 +11,13 @@
       <include src="mainMap.wxml" />
     </swiper-item>
     <swiper-item>
-      <include src="mainMap.wxml" />
+      <include src="interaction.wxml" />
     </swiper-item>
     <swiper-item>
-      <include src="mainMap.wxml" />
+      <include src="interaction.wxml" />
     </swiper-item>
     <swiper-item>
-      <include src="mainMap.wxml" />
+      <include src="interaction.wxml" />
     </swiper-item>
   </swiper>
 </view>
