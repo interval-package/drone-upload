@@ -3,10 +3,6 @@ const app = getApp()
 const db=wx.cloud.database()
 
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
     throneList: [],
     border: [],
@@ -29,9 +25,6 @@ Page({
       item: e.target.dataset.item
     })
   },
-
-  // 太多东西了，有点搞不定
-
   changeTab(e) {
     this.setData({
       tab: e.detail.current
@@ -39,40 +32,41 @@ Page({
   },
 
   loadThrones(e) {
-    this.setData({
-      'thrones': [],
-    })
+    // let tempThrone=[]
     db.collection('myThrones').where({
-      'isWorking':true,
-    }).get({
-      success: function(res){
-        this.setData({
-          throneList: res.data
-        })
-        console.log(res.data)
-        console.log("configuring the throne")
-        for(let i=0;i < this.throneList.length;i++){
-          let temp = this.throneList[i]
-          this.thrones.push({
-            id: temp.id,
-            // name: temp.name,
-            title: temp.name,
-            latitude : temp.pos.getLatitudeE(),
-            longitude: temp.pos.getLongtitudeE(),
-          })
-        }
-      },
-      fail: function(err){
-        console.error('fail to fetch the database'+err)
-      }
+      'isWorking': true,
+    }).get().then(res=>{
+      this.setData({
+        'throneList': res.data
+      })
+    }).catch(err=>{
+      console.error(err)
     })
     console.log("load!")
   },
+  readThrones(e) {
+    let tempThrone=[]
+    let obj = this.data.throneList
+    for(let i in this.data.throneList){
+      console.log(obj[i])
+      let temp=obj[i]
+      tempThrone.push({
+        id: temp.num,
+        // name: temp.name,
+        title: temp.name,
+        latitude : temp.geo.latitude,
+        longitude: temp.geo.longitude,
+        iconPath: "../../images/git.png",
+        width: 30,
+        height: 30,
+    })
+  }
+  this.setData({
+    thrones: tempThrone,
+  })
+  console.log(tempThrone)
+  },
 
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
 
   onLoad: function (options) {
     console.log("start to launch")
@@ -84,10 +78,27 @@ Page({
     }).catch(err=>{
       console.error('fail to fetch the database'+err)
     })
-},
+    this.mapCtx = wx.createMapContext('myMap')
+  },
 
-mapUpload(e){
-  this.loadThrones()
-}
+  mapUpload(e){
+    //this.loadThrones()
+  },
 
+  getCenterLocation: function (e) {
+    this.loadThrones()
+    this.readThrones()
+    console.log(this.data.throneList)
+    this.mapCtx.getCenterLocation({
+      success: function(res){
+        console.log(res.longitude)
+        console.log(res.latitude)
+        wx.showToast({
+          title: 'longitude:'+res.longitude+','+'latitude:'+res.latitude,
+          icon:'none',
+        })
+      }
+    })
+  },
 })
+
